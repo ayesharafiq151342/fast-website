@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+--primary: #0c1e21;
+  --accent: #1e8a8a;
+  --whitebg: #f6f4ee;
+  --textDark: #1E1B4B;
+  --card: #FFFFFF;
+  --border: #1e8a8a;
+
+
+}
+
+
+@media (prefers-color-scheme: dark) {
+ :root {
+    --background: #171717;
+    --foreground: #e9e7e7;
+  }
+}
+
+
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+@keyframes slideLR {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRL {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-lr {
+  animation: slideLR 0.8s ease-out forwards;
+}
+
+.animate-slide-rl {
+  animation: slideRL 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
