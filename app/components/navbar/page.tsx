@@ -65,7 +65,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  href="/services/business/digital-marketing"
+                  href="/services/marketing"
                   className="block px-4 py-2 hover:bg-[var(--primary-color)] hover:text-white rounded transition"
                 >
                   📈 Digital Marketing
@@ -73,10 +73,10 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  href="/services/business/e-commerce"
+                  href="/services/Hospitilaty"
                   className="block px-4 py-2 hover:bg-[var(--primary-color)] hover:text-white rounded transition"
                 >
-                  🛒 E-commerce Support
+                Hospitilaty  & Turism 
                 </Link>
               </li>
               <li>
