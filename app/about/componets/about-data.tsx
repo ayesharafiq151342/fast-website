@@ -150,7 +150,7 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf8f2] p-6 md:p-10">
+    <div className="min-h-screen mt-10 bg-[#faf8f2] p-6 md:p-10">
       <div className="mx-auto max-w-7xl flex flex-col md:flex-row gap-8">
         {/* LEFT SIDEBAR */}
         <aside className="w-full md:w-64 bg-white rounded-xl p-4 shadow">

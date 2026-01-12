@@ -36,7 +36,7 @@ export default function Projects() {
       viewport={{ once: true }}
     >
       <motion.h1
-        className="text-center text-4xl md:text-5xl font-extrabold text-gray-800"
+        className="text-center text-2xl md:text-4xl font-extrabold text-gray-800"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}

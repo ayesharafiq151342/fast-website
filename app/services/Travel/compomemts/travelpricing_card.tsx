@@ -43,7 +43,7 @@ const plans = [
   },
 ];
 
-export default function Pricing() {
+export default function TravelPricing() {
   return (
     <section className="py-20 bg-gray-50">
       {/* Section Header */}

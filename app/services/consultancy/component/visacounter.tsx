@@ -39,12 +39,12 @@ const Counter = ({ end, suffix = "", duration = 2000, startCounting }: CounterPr
 };
 
 // Main Component
-const StatsCounter = () => {
+const Visa_counter = () => {
   const stats = [
-    { number: 500, text: "Happy Clients", suffix: "+" },
-    { number: 10000, text: "Projects Completed", suffix: "+" },
+    { number: 95, text: "Visa Approval Rate", suffix: "%" },
+    { number: 1000, text: "Successful Cases", suffix: "+" },
+    { number: 50, text: "Countries Covered", suffix: "+" },
     { number: 15, text: "Years Experience", suffix: "+" },
-    { number: 99, text: "Satisfaction Rate", suffix: "%" },
   ];
 
   const [startCounting, setStartCounting] = useState(false);
@@ -94,4 +94,4 @@ const StatsCounter = () => {
   );
 };
 
-export default StatsCounter;
+export default Visa_counter;

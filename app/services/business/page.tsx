@@ -159,7 +159,7 @@ const services = [
 
  <section className="py-20 xl:w-8/12 m-auto ">
       <div className="text-center mb-12">
-               <h1 className="text-center text-4xl md:text-5xl font-extrabold text-gray-800 ">
+               <h1 className="text-center text-2xl md:text-4xl font-extrabold text-gray-800 ">
 
           Our  <span className="text-[var(--accent)]">Core Services </span>
         </h1>
@@ -203,7 +203,8 @@ const services = [
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+        <h2 className="text-4xl md:text-4xl xl:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+
             Trusted by  <span className="text-[var(--accent)]">5,000+ </span><br /> Happy Customers
           </h2>
 

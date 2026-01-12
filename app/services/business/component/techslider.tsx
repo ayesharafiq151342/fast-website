@@ -33,7 +33,7 @@ export default function TechPage() {
       <section className="w-full  overflow-hidden">
 
         {/* Heading */}
-        <h1 className="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-16">
+        <h1 className="text-center text-2xl md:text-4xl font-extrabold text-gray-800 mb-16">
           Technologies <span className="text-[var(--accent)]">We Use</span> 
         </h1>
 

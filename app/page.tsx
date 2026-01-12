@@ -154,14 +154,14 @@ const upAnim = {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              className="absolute lg:top-56 lg:left-104 top-64 left-1/2 transform -translate-x-1/2 lg:translate-x-0 rounded-3xl overflow-hidden border-6 border-white shadow-lg w-60 h-44 lg:w-[300px] lg:h-[280px]"
+              className="absolute lg:top-64 xl:w-64 xl:h-56 lg:left-80 top-64 left-1/2 transform -translate-x-1/2 lg:translate-x-0 rounded-3xl overflow-hidden border-6 border-white shadow-lg w-60 h-44 lg:w-[300px] lg:h-[280px]"
             >
               <Image
                 src="/images/testimonial-img.webp"
                 alt="Graduation"
                 width={420}
                 height={280}
-                className="object-cover w-full h-full"
+                className="object-cover xl:w-96 w-full h-full"
               />
             </motion.div>
           </motion.div>
@@ -322,7 +322,7 @@ const upAnim = {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative h-full overflow-hidden rounded-2xl"
         >
-          <img src="/images/grid-3.jpg" className="h-full w-full object-cover" />
+          <img src="/images/section.webp" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-[var(--accent)]/40" />
           <div className="absolute bottom-6 left-6 text-white">
             <span className="text-xs bg-white/20 px-3 py-1 rounded">Support</span>
