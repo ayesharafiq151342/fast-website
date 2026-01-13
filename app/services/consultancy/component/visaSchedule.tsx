@@ -116,10 +116,8 @@ export default function VisaBooking() {
             </div>
 
             {/* Button */}
-            <button
-              type="submit"
-              className="w-full bg-[var(--accent)] text-white py-4 rounded-full font-semibold shadow-lg hover:opacity-90 transition"
-            >
+                            <button className="px-10 py-4 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
+
               Confirm Booking
             </button>
           </form>

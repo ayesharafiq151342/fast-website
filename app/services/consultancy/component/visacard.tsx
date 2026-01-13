@@ -96,7 +96,8 @@ export default function VisaSection() {
           </div>
 
           {/* CTA */}
-          <button className="mt-10 px-8 py-4 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:opacity-90 transition">
+                          <button className="px-10 py-4 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
+
             Get Visa Consultation
           </button>
         </motion.div>

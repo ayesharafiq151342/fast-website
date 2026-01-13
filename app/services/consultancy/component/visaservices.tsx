@@ -74,7 +74,8 @@ export default function VisaServices() {
               <p className="text-sm text-gray-500 mb-6">{card.duration}</p>
 
               {/* Button */}
-              <button className="w-full py-2.5 rounded-lg font-semibold bg-[var(--accent)] text-white hover:bg-[var(--primary)] transition">
+                           <button className="px-10 py-4 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
+
                 Apply Now
               </button>
             </motion.div>

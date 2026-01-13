@@ -120,14 +120,8 @@ export default function Pricing() {
             </div>
 
             {/* Button */}
-            <button
-              className="
-                w-full py-3 rounded-lg font-semibold
-                bg-[var(--accent)] text-white
-                hover:bg-[var(--primary)]
-                transition
-              "
-            >
+                            <button className="px-10 py-4 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
+
               {plan.button}
             </button>
           </div>

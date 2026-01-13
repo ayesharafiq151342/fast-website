@@ -20,6 +20,11 @@ const config = {
       spacing: {
         4.5: "1.125rem",
       },
+
+      /* ✅ ADD FONTS HERE */
+      fontFamily: {
+  atkinson: ['"Atkinson Hyperlegible Mono"', 'monospace'],
+      },
     },
   },
   plugins: [

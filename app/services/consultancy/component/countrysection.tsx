@@ -93,15 +93,8 @@ export default function StudyAbroadAdvisory() {
                 <p className="text-gray-600 text-sm mt-2 mb-5">
                   {country.visas}
                 </p>
+                <button className="px-10 py-4 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
 
-                <button
-                  className="
-                    px-6 py-2.5 rounded-full
-                    bg-[var(--accent)] text-white
-                    font-semibold text-sm
-                    hover:opacity-90 transition
-                  "
-                >
                   Explore Options
                 </button>
               </div>

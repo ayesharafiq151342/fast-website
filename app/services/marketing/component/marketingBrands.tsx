@@ -43,7 +43,7 @@ export default function Marketing_section() {
                 >
 
 
-                    <p className="text-white/80 mt-24 max-w-xl">
+                    <p className="text-white/80 md:mt-24 max-w-xl">
                         In a world of noise, we create signals. Your brand deserves more than impressions — it deserves impact, engagement, and loyalty that lasts.
 
 
@@ -94,9 +94,9 @@ export default function Marketing_section() {
                     </div>
 
                     {/* BUTTONS */}
-                    <div className="flex flex-wrap gap-6 mt-10">
-                        <button className="px-8 py-4 rounded-full font-semibold bg-[var(--accent)] border border-white/30
-              hover:bg-[var(--primary)] transition-all duration-300">
+                    <div className="flex flex-wrap  gap-6 mt-10">
+                                                     <button className="px-10 w-ful  py-4 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
+
                             Learn More
                         </button>
 

@@ -7,8 +7,23 @@
   --textDark: #1E1B4B;
   --card: #FFFFFF;
   --border: #1e8a8a;
+--golden:#a8712a;
 
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible Mono';
+  src: url('/fonts/AtkinsonHyperlegible-Mono.woff2') format('woff2'),
+       url('/fonts/AtkinsonHyperlegible-Mono.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Atkinson Hyperlegible Mono';
+  src: url('/fonts/AtkinsonHyperlegible-Mono-Bold.woff2') format('woff2'),
+       url('/fonts/AtkinsonHyperlegible-Mono-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
 }
 
 
@@ -20,7 +35,13 @@
 }
 
 
-
+.bg-grid-pattern {
+  background-color: var(--primary); /* Base background */
+  background-image:
+    linear-gradient(rgba(30,138,138,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30,138,138,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
 
 
 @keyframes slideLR {

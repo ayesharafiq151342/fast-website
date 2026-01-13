@@ -68,7 +68,7 @@ export default function ContactSection() {
         </div>
 
         {/* Right: Form */}
-     <div className="order-2 lg:order-2 bg-white p-8 h-[620px] rounded-xl shadow-lg overflow-y-auto">
+     <div className="order-2 lg:order-2 bg-white p-8 h-[650px] rounded-xl shadow-lg overflow-y-auto">
           {success && (
             <p className="mb-4 text-green-600 font-medium">{success}</p>
           )}
@@ -152,10 +152,12 @@ export default function ContactSection() {
             </div>
 
             <div>
+              
+
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-md bg-[var(--accent)] px-6 py-3 font-semibold text-white hover:bg-[var(--primary)] transition"
+                className="px-10 py-4 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>

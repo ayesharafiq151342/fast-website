@@ -193,7 +193,7 @@ const upAnim = {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`pb-3 font-semibold capitalize transition-all text-left sm:text-center ${
+                  className={`pb-3 font-semibold capitalize  transition-all text-left sm:text-center ${
                     activeTab === tab
                       ? "border-b-2 border-green-900 text-green-900"
                       : "text-gray-500 hover:text-gray-700"
@@ -218,9 +218,10 @@ const upAnim = {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[var(--accent)] w-full lg:w-64  hover:bg-[var(--primary)] text-white transition px-8 py-4 rounded-lg font-semibold text-sm sm:text-base"
+                className=" w-full lg:w-64 bg-[var(--accent)] text-white  shadow-lg hover:scale-105 transition px-8 py-4 rounded-lg font-semibold text-sm sm:text-base"
               >
                 More About Us
+                    
               </motion.button>
 
               <div className="flex items-center gap-3">
@@ -264,7 +265,7 @@ const upAnim = {
         <div className="flex-1 flex items-start lg:justify-end">
            <Link
               href="/projects"
-              className="px-6 py-3 bg-[var(--accent)] text-white font-semibold rounded-lg hover:bg-[var(--primary)] transition-colors duration-300"
+              className="px-6 py-3 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition  duration-300"
             >
               View Projects
             </Link>
@@ -275,7 +276,7 @@ const upAnim = {
    <div className="grid grid-cols-1 gap-6 md:grid-cols-6 md:grid-rows-2">
 
       {/* Card 1 – Left */}
-      <Link href="/Business" className="col-span-6 md:col-span-4">
+      <Link href="/business" className="col-span-6 md:col-span-4">
         <motion.div
           variants={leftAnim}
           initial="hidden"
@@ -285,7 +286,7 @@ const upAnim = {
           className="relative h-full overflow-hidden rounded-2xl"
         >
           <img src="/project-gallery-1.webp" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[var(--accent)]/40" />
+          <div className="absolute inset-0 bg-[var(--accent)]/30" />
           <div className="absolute bottom-6 left-6 text-white">
             <span className="text-xs bg-white/20 px-3 py-1 rounded">Business</span>
             <h3 className="mt-2 text-xl font-semibold">Business</h3>
@@ -304,7 +305,7 @@ const upAnim = {
           className="relative h-full overflow-hidden rounded-2xl"
         >
           <img src="/images/istockphoto-172457074-612x612.jpg" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[var(--accent)]/40" />
+          <div className="absolute inset-0 bg-[var(--accent)]/30" />
           <div className="absolute bottom-6 left-6 text-white">
             <span className="text-xs bg-white/20 px-3 py-1 rounded">Business</span>
             <h3 className="mt-2 text-xl font-semibold">Printing & Packaging</h3>
@@ -323,7 +324,7 @@ const upAnim = {
           className="relative h-full overflow-hidden rounded-2xl"
         >
           <img src="/images/section.webp" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[var(--accent)]/40" />
+          <div className="absolute inset-0 bg-[var(--accent)]/30" />
           <div className="absolute bottom-6 left-6 text-white">
             <span className="text-xs bg-white/20 px-3 py-1 rounded">Support</span>
             <h3 className="mt-2 text-xl font-semibold">Interactive Learning Platform</h3>
@@ -342,7 +343,7 @@ const upAnim = {
           className="relative h-full overflow-hidden rounded-2xl"
         >
           <img src="/juwlery.jpg" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[var(--accent)]/40" />
+          <div className="absolute inset-0 bg-[var(--accent)]/30" />
           <div className="absolute bottom-6 left-6 text-white">
             <span className="text-xs bg-white/20 px-3 py-1 rounded">Business</span>
             <h3 className="mt-2 text-xl font-semibold">The Glamours</h3>

@@ -157,7 +157,7 @@ const services = [
   </div>
 </section>
 
- <section className="py-20 xl:w-8/12 m-auto ">
+ <section className="py-20 px-4 sm:px-6 md:px-8 w-full max-w-7xl mx-auto ">
       <div className="text-center mb-12">
                <h1 className="text-center text-2xl md:text-4xl font-extrabold text-gray-800 ">
 
@@ -230,7 +230,8 @@ const services = [
             </li>
           </ul>
 
-          <button className="bg-[var(--accent)] hover:bg-[var(--primary)] text-white px-8 py-4 rounded-md font-semibold transition">
+                     <button className="px-10 py-4 bg-[var(--accent)] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
+
             Talk To A Consultant
           </button>
         </div>
