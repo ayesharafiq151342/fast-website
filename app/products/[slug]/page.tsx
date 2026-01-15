@@ -4,9 +4,13 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { products, Product } from "@/app/data/products";
-import Navbar from "@/app/jewellery/component/nevbar";
+import Navbar from "@/app/jewellery/component/navbar";
+import { motion } from "framer-motion";
+import ProductGrid from "@/app/jewellery/component/ProductGrid";
+import Footer from "@/app/jewellery/component/footer_jewllery";
+import { useCart } from "@/app/jewellery/component/CartContext";
 
-export default function ProductPage() {
+export default function ProductPage( ) {
   const params = useParams();
   const slug = params.slug as string;
 const faqs = [
@@ -89,9 +93,18 @@ const faqs = [
     ]
   }
 ];
-
+const texts = [
+  "12.12 Sale Live Now",
+  "30,000+ Satisfied Customers",
+  "1,000+ 5 Star Reviews",
+  "Free Shipping Above Rs. 2990/-",
+  "WORLDWIDE SHIPPING",
+  "3-5 Working Days Delivery Time",
+];
+const { addToCart } = useCart();
 
  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -257,9 +270,22 @@ const faqs = [
                   +
                 </button>
 
-                <button className="ml-4 xl:ml:64 w-64 bg-black text-white py-3 hover:bg-gray-900 transition text-lg font-medium">
-                  Add to Cart
-                </button>
+         
+<button
+  onClick={() =>
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      qty,
+    })
+  }
+  className="w-full bg-black text-white py-3 rounded"
+>
+  Add to Cart
+</button>
+
               </div>
 
               {/* Action Buttons */}
@@ -306,7 +332,7 @@ const faqs = [
               ))}
           </div>
         ))}
-      </div>
+      </div>  <img src="/jewllery/paypal.jpg" className="w-full mt-2" />
     </section>
             </div>
   
@@ -316,7 +342,31 @@ const faqs = [
         
           </div>
         </div>
-      </section>
+
+      </section><div className="w-full overflow-hidden bg-[var(--golden)] py-3">
+      <motion.div
+        className="flex whitespace-nowrap gap-10 text-white font-medium text-sm md:text-base"
+        animate={{ x: ["0%", "-100%"] }}
+        transition={{
+          repeat: Infinity,
+          duration: 25,
+          ease: "linear",
+        }}
+      >
+        {/* Repeat content twice for smooth loop */}
+        {[...texts, ...texts].map((text, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <span>⭐</span>
+            <span>{text}</span>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+    <h2 className="text:xl xl:text-3xl mt-5 xl:ml-12 ">You may also like
+</h2>
+<ProductGrid limit={4} />
+<Footer/>
+
     </>
   );
 }

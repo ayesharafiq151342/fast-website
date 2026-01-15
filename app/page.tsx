@@ -276,7 +276,7 @@ const upAnim = {
    <div className="grid grid-cols-1 gap-6 md:grid-cols-6 md:grid-rows-2">
 
       {/* Card 1 – Left */}
-      <Link href="/business" className="col-span-6 md:col-span-4">
+      <Link href="/services/business" className="col-span-6 md:col-span-4">
         <motion.div
           variants={leftAnim}
           initial="hidden"
@@ -333,7 +333,7 @@ const upAnim = {
       </Link>
 
       {/* Card 4 – Bottom (wide) */}
-      <Link href="/" className="col-span-6 md:col-span-4">
+      <Link href="/jewellery" className="col-span-6 md:col-span-4">
         <motion.div
           variants={upAnim}
           initial="hidden"
