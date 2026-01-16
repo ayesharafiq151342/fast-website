@@ -1,63 +1,87 @@
+import Image from "next/image";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookF,
-  faInstagram,
-  faPinterestP,
+import { 
+  faFacebookF, 
+  faTwitter, 
+  faYoutube, 
+  faInstagram, 
+  faWhatsapp 
 } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (
-   <><div className="w-full text-center px-4 md:px-12 py-16 bg-white">
-     <h1 className="font-serif text-3xl mb-10 md:text-4xl text-gray-900 ">
- ZAK Jewellery
- <p className="max-w-4xl mx-auto mt-10 text-gray-600 leading-relaxed text-sm md:text-base">
-ZAK Jewellery is a Pakistani artificial jewellery brand offering bridal jewellery, bangles, earrings, and fashion accessories for weddings, formal occasions, and everyday wear.
-  </p>
-  </h1>  
-<img src="/jewllery/payment.avif" alt="Logo 6" className="max-w-32  m-auto h-auto scale-125" />
-</div>
-    <footer className="bg-black text-gray-300 py-16">   <div className="container mx-auto px-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-
-        {/* Policies */}
+    <footer className="bg-black  text-[var(--golden)] py-10">
+      <div className="container  mx-17 md:px-0 grid grid-cols-1 md:grid-cols-4 gap-54">
+        
+        {/* Contact Info with Logo */}
         <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Policies</h3>
+          {/* Logo */}
+          <div className="mb-4">
+            <Image 
+              src="/jewllery/logo-removebg-preview.png" // your logo path
+              alt="Zak Collections Logo"
+              width={200}
+              height={50}
+              className="object-contain"
+            />
+          </div>
+
+        
+          <p>Bahria Orchard, Lahore, Pakistan</p>
+          <p>Email: <a href="mailto:zakcollections1@gmail.com" className="underline">zakcollections1@gmail.com</a></p>
+          <p>Phone: <a href="tel:+923106798633" className="underline">+92 310-6798633</a></p>
+        </div>
+
+        {/* Other Categories */}
+        <div>
+          <h2 className="text-lg md:mt-20 md:text-2xl  font-Tharoma uppercase mb-4">Other Categories</h2>
           <ul className="space-y-2">
-            <li>Privacy Policy</li>
-            <li>Exchange Policy</li>
-            <li>Refund Policy</li>
-            <li>Shipping Policy</li>
-            <li>Terms of Service</li>
+            <li><Link href="/mala" className="hover:underline">Mala</Link></li>
+            <li><Link href="/new-arrivals" className="hover:underline">New Arrivals</Link></li>
+            <li><Link href="/best-sellings" className="hover:underline">Best Sellings</Link></li>
+            <li><Link href="/bangles" className="hover:underline">Bangles</Link></li>
           </ul>
         </div>
 
-        {/* Top Categories */}
+        {/* Quick Links */}
         <div>
-          <h3 className="text-white text-lg font-semibold mb-4">
-            Top Categories
-          </h3>
-          <ul className="space-y-2 uppercase text-sm">
-            <li>Bridal Jewelry</li>
-            <li>Bangles Design</li>
+                  <h2 className="text-lg md:mt-20 md:text-2xl  font-Tharoma uppercase mb-4">Quick Links</h2>
+          <ul className="space-y-2">
+            <li><Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
+            <li><Link href="/terms-of-service" className="hover:underline">Terms of Service</Link></li>
+            <li><Link href="/disclaimer" className="hover:underline">Disclaimer</Link></li>
+            <li><Link href="/faqs" className="hover:underline">FAQ's</Link></li>
           </ul>
         </div>
 
-        {/* Social Icons */}
+        {/* Social Links */}
         <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Follow Us</h3>
-          <div className="flex gap-4">
-            <a className="p-3 bg-gray-800 rounded-full hover:bg-[#1877F2] transition">
+          <h2 className="text-lg md:mt-20 md:text-2xl  font-Tharoma uppercase mb-4">Social Links</h2>
+          <div className="flex space-x-4 text-2xl">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
-            <a className="p-3 bg-gray-800 rounded-full hover:bg-[#E4405F] transition">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faYoutube} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a className="p-3 bg-gray-800 rounded-full hover:bg-[#E60023] transition">
-              <FontAwesomeIcon icon={faPinterestP} />
+            <a href="https://wa.me/923106798633" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faWhatsapp} />
             </a>
           </div>
         </div>
-
       </div>
-    </footer></>
+
+      {/* Footer Bottom */}
+      <div className="text-center text-sm text-gray-400 mt-8">
+        &copy; {new Date().getFullYear()} Zak Collections. All rights reserved.
+      </div>
+    </footer>
   );
 }

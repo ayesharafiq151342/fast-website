@@ -23,7 +23,8 @@ const config = {
 
       /* ✅ ADD FONTS HERE */
       fontFamily: {
-  atkinson: ['"Atkinson Hyperlegible Mono"', 'monospace'],
+        atkinson: ['"Atkinson Hyperlegible Mono"', 'monospace'],
+        tharoma: ['Tharoma', 'sans-serif'],
       },
     },
   },

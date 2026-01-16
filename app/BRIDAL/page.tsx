@@ -57,7 +57,7 @@ export default function NewArrivalPage() {
 
   {/* Row 2: Heading */}
   <h1 className="text-2xl md:text-8xl p-10 font-montserrat text-[var(--text_skin)]">
-    {category || "NECKLACE"}
+    {category || "BRIDAL"}
   </h1>
 
   {/* Row 3: Description */}
