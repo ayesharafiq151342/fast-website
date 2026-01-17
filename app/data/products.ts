@@ -9,13 +9,14 @@ export interface Product {
   discount?: string;
   outOfStock?: boolean;
   description?: string;
+   rating?: number; 
 }
 export const products: Product[] = [
   {
     id: 1,
     slug: "rajwarri-antique-gold-choker-set",
     name: "Rajwarri Antique Gold Choker Set",
-    image: "/jewllery/BRIDALJEWELLERY-1.webp",
+    image: "/jewllery/BRIDAL JEWELLERY.webp",
     category: "BRIDAL JEWELLERY",
     price: 4999,
     oldPrice: 6000,
@@ -126,9 +127,9 @@ export const products: Product[] = [
   {
     id: 13,
     slug: "gold-clover-locket-pendant-set",
-    name: "Gold Clover Locket Pendant Set",
-    image: "/jewllery/cha--1.webp",
-    category: "CHAINS",
+    name: "✨Royal Gold Square Pendant & Earring Set – Intricate Floral Carved Design✨",
+    image: "/jewllery/locket.webp",
+    category: "LOCKET",
     price: 599,
     oldPrice: 899,
     discount: "Sale",
@@ -214,8 +215,8 @@ export const products: Product[] = [
     id: 24,
     slug: "royal-gold-square-pendant-earring-set",
     name: "Royal Gold Square Pendant & Earring Set",
-    image: "/jewllery/royal-square-pendant.png",
-    category: "Stud",
+    image: "/jewllery/acc-8.webp",
+    category: "STUD",
     price: 1399,
     oldPrice: 1999,
     discount: "Sale",
@@ -278,31 +279,31 @@ export const products: Product[] = [
   {
     id: 43,
     slug: "sparkling-stone-necklace-bracelet-set",
-    name: "Sparkling Stone-Studded Necklace & Bracelet Set",
+    name: "Sparkling Stone-STUDded Necklace & Bracelet Set",
     image: "/jewllery/maka.webp",
     category: "MALA",
     price: 2199,
     oldPrice: 3999,
     discount: "Sale",
     description:
-      "Sparkling Stone-Studded Necklace & Bracelet Set – Elegant and Shimmering",
+      "Sparkling Stone-STUDded Necklace & Bracelet Set – Elegant and Shimmering",
   },
   {
     id: 44,
     slug: "sparkling-gold-stone-necklace-bracelet-set",
-    name: " Sparkling Stone-Studded Necklace & Bracelet Set ",
+    name: " Sparkling Stone-STUDded Necklace & Bracelet Set ",
     image: "/jewllery/malaa.webp",
     category: "MALA",
     price: 2199,
     oldPrice: 3999,
     discount: "Sale",
     description:
-      "Sparkling Gold Stone-Studded Necklace & Bracelet Set – Timeless Luxury",
+      "Sparkling Gold Stone-STUDded Necklace & Bracelet Set – Timeless Luxury",
   },{
   id: 45,
   slug: "black-gold-crystal-jewellery-set",
   name: "Elegant Black & Gold Crystal Jewellery Set – Timeless Grace for Every Occasion",
-  image: "/jewllery/black-gold-crystal-set.png",
+  image: "/jewllery/acc.png",
   category: "MEHNDI JEWELLERY",
   price: 2999,
   oldPrice: 3500,
@@ -315,7 +316,7 @@ export const products: Product[] = [
   id: 48,
   slug: "royal-gold-square-pendant-earring-set",
   name: "Royal Gold Square Pendant & Earring Set – Intricate Floral Carved Design",
-  image: "/jewllery/royal-square-pendant.png",
+  image: "/jewllery/ban-7.webp",
   category: "PENDANTS",
   price: 1399,
   oldPrice: 1999,
@@ -389,25 +390,14 @@ export const products: Product[] = [
     "Luxury Gold Wheel-Medallion Bracelet and Ring Pair with a bold circular design, ideal for modern statement styling.",
 },
 
-{
-  id: 54,
-  slug: "royal-gold-art-deco-bracelet-ring-set",
-  name: "Royal Gold Art-Deco Bracelet & Matching Ring Set",
-  image: "/jewllery/art-deco-set.png",
-  category: "RINGS",
-  price: 1299,
-  oldPrice: 1799,
-  discount: "Sale",
-  description:
-    "Royal Gold Art-Deco Bracelet & Matching Ring Set inspired by classic art-deco patterns, offering a rich and royal finish.",
-},
+
 
  {
     id: 24,
     slug: "royal-gold-square-pendant-earring-set",
     name: "Royal Gold Square Pendant & Earring Set",
     image: "/jewllery/royal-square-pendant.png",
-    category: "tups",
+    category: "TOPS",
     price: 1399,
     oldPrice: 1999,
     discount: "Sale",

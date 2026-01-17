@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import ProductGrid from "../jewellery/component/ProductGrid";
-import Sidebar from "../jewellery/component/sidebar";
+import ProductGrid from "../../jewellery/component/ProductGrid";
+import Sidebar from "../../jewellery/component/sidebar";
 import { products } from "@/app/data/products";
-import Navbar from "../jewellery/component/navbar";
+import Navbar from "../../jewellery/component/navbar";
 
 export default function NewArrivalPage() {
   const [category, setCategory] = useState<string | null>(null);
@@ -52,18 +52,19 @@ export default function NewArrivalPage() {
        <div className="flex flex-col gap-2 m-6 ">
   {/* Row 1: Breadcrumb */}
   <p className="text-xs text-gray-400">
-    Home / <span className="text-gray-600 font-medium">{category || "Banagels"}</span>
+    Home / <span className="text-gray-600 font-medium">{category || "BRIDAL JEWELLERY"}</span>
   </p>
 
   {/* Row 2: Heading */}
   <h1 className="text-2xl md:text-8xl p-10 font-montserrat text-[var(--text_skin)]">
-    {category || "NECKLACE"}
+    {category || "BRIDAL JEWELLERY"}
   </h1>
 
   {/* Row 3: Description */}
   
 </div>
 
+<p  className="xl:ml-17">Elegant and stylish bridal jewellery crafted with premium materials.</p>
 
           {/* Sort Row */}
         <div className=" pl-10 pr-10  "><ProductGrid

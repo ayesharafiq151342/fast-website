@@ -83,10 +83,6 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/printing" className={normalClass}>Printing</Link>
-          </li>
-
-          <li>
             <Link href="/contact" className={isActive("/contact") ? activeClass : normalClass}>
               Contact
             </Link>
@@ -183,15 +179,7 @@ export default function Navbar() {
             </li>
 
             {/* Printing */}
-            <li>
-              <Link
-                href="/printing"
-                onClick={() => setIsOpen(false)}
-                className={`block w-full truncate px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-white`}
-              >
-                Printing
-              </Link>
-            </li>
+           
 
             {/* Contact */}
             <li>

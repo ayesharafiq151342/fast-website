@@ -7,7 +7,7 @@ import ProductGrid from "./component/ProductGrid";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import ProductPage from "./component/ProductGrid";
+import { products } from "../data/products";
 import {
   Globe,
   Headphones,
@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import ReviewCarousel from "./component/rewies";
 import Footer from "./component/footer_jewllery";
+import { useState } from "react";
 export default function Home({ params }: { params: { slug: string } }) {
     const collections = [
   { name: "Mala", img: "/jewllery/na-18-b.jpg" },
@@ -35,7 +36,11 @@ export default function Home({ params }: { params: { slug: string } }) {
 
 
 
-];
+]; const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const categories = Array.from(
+    new Set(products.map((p) => p.category))
+  );
 
 const features = [
   {
@@ -74,7 +79,10 @@ const texts = [
 ];
   return (
     <>
-      <Navbar />
+       <Navbar
+    
+      />
+
          <div className="w-full overflow-hidden bg-[var(--golden)] py-3">
       <motion.div
         className="flex whitespace-nowrap gap-10 text-white font-medium text-sm md:text-base"
@@ -94,14 +102,14 @@ const texts = [
         ))}
       </motion.div>
     </div>
-      <div className="w-full h-screen" >
+      <div className="w-full h-64 xl:h-screen" >
   <img
     src="/jewllery/nayab_banner_1.webp"  // Make sure this is in public/jewllery/
     alt="HJ Jewellery Banner"
     className="w-full h-auto object-cover"
   />
 </div>
-   <button className="bg-[var(--golden)] uppercase  font-bold  font-tharoma  text-sm md:text-lg lg:text-2xl m-auto text-white px-6 xl:mt-15 xl:mb-15  py-3 rounded-lg flex items-center gap-2 hover:opacity-90 transition">
+   <button className="bg-[var(--golden)] mb-10 uppercase  font-bold  font-tharoma  text-sm md:text-lg lg:text-2xl m-auto text-white px-6 xl:mt-15 xl:mb-15  py-3 rounded-lg flex items-center gap-2 hover:opacity-90 transition">
     Get In Touch
       <FontAwesomeIcon icon={faWhatsapp} />
     </button>
@@ -143,7 +151,8 @@ const texts = [
         ))}
       </div>
     </section>
-    <div className="px-14">         <ProductGrid limit={8} />
+    <div className="md:px-14">      
+         <ProductGrid limit={8} />
       </div>
     <div className=" flex justify-center"><a href="/jewellery">
       <button

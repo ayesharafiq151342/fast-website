@@ -142,7 +142,7 @@ export default function ProductPage() {
       <Navbar />
 <div className="bg-[var(--skin)]">
       <section className="max-w-[1600px] mx-auto py-12 ">
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 p-10 xl:p-0 gap-10">
 
           {/* LEFT: Image Gallery */}
           <div>
@@ -308,7 +308,7 @@ export default function ProductPage() {
       </div>
 
       {/* Related Products */}
-      <h2 className="text-xl xl:text-4xl mt-5 xl:ml-12 font-serif">Related Products</h2>
+      <h2 className="text-xl xl:text-4xl mt-5 ml-7 mb-5 xl:ml-12 font-serif">Related Products</h2>
       <div className="px-7">
         <ProductGrid limit={4} />
       </div>

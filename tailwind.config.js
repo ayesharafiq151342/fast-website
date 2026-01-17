@@ -24,7 +24,9 @@ const config = {
       /* ✅ ADD FONTS HERE */
       fontFamily: {
         atkinson: ['"Atkinson Hyperlegible Mono"', 'monospace'],
-        tharoma: ['Tharoma', 'sans-serif'],
+        tharoma: ['Tharoma', 'sans-serif'],      
+        montserrat: ['Montserrat', 'sans-serif'],
+
       },
     },
   },

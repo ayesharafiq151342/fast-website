@@ -12,7 +12,7 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-black  text-[var(--golden)] py-10">
-      <div className="container  mx-17 md:px-0 grid grid-cols-1 md:grid-cols-4 gap-54">
+      <div className="container  mx-17 md:ml-42 md:px-0 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-54">
         
         {/* Contact Info with Logo */}
         <div>

@@ -4,90 +4,72 @@ import { motion } from "framer-motion";
 
 const plans = [
   {
-    title: "Starter",
-    price: "PKR 75,000",
+    title: "Early Bird Special",
+    price: "PKR 60,000",
     features: [
-      "Social Media Management",
-      "Basic Content Creation",
-      "2 Campaigns/Month",
-      "Monthly Analytics",
+      "Book 60 days in advance",
+      "20% Discount on all packages",
+      "Priority Customer Support",
+      "Flexible Dates",
     ],
-    button: "Choose Starter",
+    button: "Book Early Bird",
   },
   {
-    title: "Professional",
-    price: "PKR 150,000",
+    title: "Family Package",
+    price: "PKR 40,000/person",
     badge: "Popular",
     features: [
-      "Full Social Media Suite",
-      "Advanced Content",
-      "4 Campaigns/Month",
-      "Influencer Collaboration",
-      "Weekly Reports",
-      "Dedicated Manager",
+      "4+ Travelers",
+      "Special Family Activities",
+      "Complimentary Meals for Kids",
+      "Group Discount 30%",
+      "Travel Insurance Included",
     ],
-    button: "Choose Pro",
+    button: "Book Family Package",
   },
   {
-    title: "Enterprise Custom",
-    price: "PKR 300,000",
+    title: "Last Minute Booking",
+    price: "PKR 75,000",
     features: [
-      "Custom Solutions",
-      "Unlimited Campaigns",
-      "Celebrity Collaborations",
-      "24/7 Support",
-      "Brand Strategy",
-      "Full Creative Team",
+      "Book within 7 days",
+      "15% Discount",
+      "Flexible Cancellation",
+      "Priority Assistance",
+      "Exclusive Experiences",
     ],
-    button: "Enterprise Custom",
+    button: "Book Last Minute",
   },
 ];
 
 export default function TravelPricing() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
       {/* Section Header */}
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-16"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <motion.h1
-          className="text-center text-2xl md:text-4xl font-extrabold text-gray-800"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          Flexible <span className="text-[var(--accent)]">Plane</span>
-        </motion.h1>
-
-        <motion.p
-          className="text-gray-600 m-4 max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.7 }}
-        >
-          We design flexible, adaptable strategies that help your brand soar.
-          From boosting visibility to driving conversions, our approach adjusts
-          to your business needs, ensuring growth and lasting impact.
-        </motion.p>
+        <h1 className="text-3xl md:text-5xl font-extrabold text-gray-800">
+          Travel <span className="text-[var(--accent)]">Packages</span>
+        </h1>
+        <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
+          Choose the perfect travel package for your next adventure. Special discounts and exclusive offers await for early bookings, families, groups, and last-minute planners.
+        </p>
       </motion.div>
 
       {/* Plan Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
         {plans.map((plan, index) => (
-          <div
+          <motion.div
             key={index}
-            className="
-              relative rounded-2xl p-8 text-center
-              bg-white border border-gray-200
-              shadow-md hover:shadow-xl
-              hover:-translate-y-2
-              transition-all duration-300
-              flex flex-col justify-between h-full
-            "
+            className="relative rounded-2xl p-8 text-center bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-full"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true }}
           >
             {/* Badge */}
             {plan.badge && (
@@ -103,10 +85,8 @@ export default function TravelPricing() {
               </h3>
 
               <div className="my-6">
-                <span className="text-4xl font-bold text-gray-900">
-                  {plan.price}
-                </span>
-                <span className="text-sm text-gray-500"> / mo</span>
+                <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                <span className="text-sm text-gray-500"> / person</span>
               </div>
 
               <ul className="space-y-3 text-sm mb-8 text-gray-600">
@@ -120,19 +100,25 @@ export default function TravelPricing() {
             </div>
 
             {/* Button */}
-            <button
-              className="
-                w-full py-3 rounded-lg font-semibold
-                bg-[var(--accent)] text-white
-                hover:bg-[var(--primary)]
-                transition
-              "
-            >
+            <button className="w-full py-3 rounded-lg font-semibold bg-[var(--accent)] text-white hover:bg-[var(--primary)] transition">
               {plan.button}
             </button>
-          </div>
+          </motion.div>
         ))}
       </div>
+
+      {/* Extra Note / CTA */}
+      <motion.div
+        className="mt-12 text-center text-gray-700 max-w-2xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <p>
+          💡 Book early for the best deals, bring your family or friends for exclusive group discounts, or grab last-minute packages for spontaneous adventures!
+        </p>
+      </motion.div>
     </section>
   );
 }

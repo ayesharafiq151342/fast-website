@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import Navbar from "../jewellery/component/navbar";
 
 export default function SignInPage() {
   const [email, setEmail] = useState("");
@@ -15,7 +16,8 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+  <>  <Navbar/>
+    <div className="min-h-screen bg-[var(--skin)] flex items-center justify-center px-4">
       <div className="bg-white max-w-md w-full rounded-lg shadow-lg p-8">
         {/* Logo */}
         <div className="flex justify-center mb-6">
@@ -81,6 +83,6 @@ export default function SignInPage() {
           <a href="#" className="text-black underline">Privacy Policy</a>.
         </p>
       </div>
-    </div>
+    </div></>
   );
 }
