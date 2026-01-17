@@ -10,6 +10,7 @@ export interface Product {
   outOfStock?: boolean;
   description?: string;
    rating?: number; 
+   images?: string[];
 }
 export const products: Product[] = [
   {

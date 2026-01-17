@@ -128,7 +128,7 @@ export default function ProductPage() {
 
   const [activeImage, setActiveImage] = useState<string>(galleryImages[0]);
   const [qty, setQty] = useState<number>(1);
-  const [activeColor, setActiveColor] = useState<string>(product.colors?.[0] || "");
+  // const [activeColor, setActiveColor] = useState<string>(product.colors?.[0] || "");
 
   // Update active image when slug changes
   // useEffect(() => {
