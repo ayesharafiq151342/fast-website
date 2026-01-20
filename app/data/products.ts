@@ -1,4 +1,5 @@
 export interface Product {
+  products?: typeof products; 
   id: number;
   slug: string;
   name: string;
@@ -230,7 +231,7 @@ export const products: Product[] = [
     slug: "royal-red-rose-bridal-bangles",
     name: "Royal Red Rose Bridal Bangles",
     image: "/jewllery/ban-3.jpeg",
-    category: "BANGLES",
+    category: "Bridal Bangles",
     price: 4500,
     oldPrice: 5000,
     discount: "Sale",

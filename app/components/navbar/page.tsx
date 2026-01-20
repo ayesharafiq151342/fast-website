@@ -30,17 +30,15 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white fixed top-0 left-0 w-full z-[9999] shadow-md">
-      <div className="md:max-w-7xl w-full mx-auto px-4 h-16 flex items-center justify-between">
-
+    <nav className="bg-white fixed top-0 left-0 w-full z-50 shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-16 flex items-center justify-between">
         {/* LOGO */}
-        <Link href="/" className="text-2xl font-bold text-[var(--accent)]">
+        <Link href="/" className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--accent)]">
           YourCompany
         </Link>
 
         {/* DESKTOP MENU */}
-        <ul className="hidden md:flex items-center gap-4 font-medium text-gray-700">
-
+        <ul className="hidden md:flex items-center gap-2 lg:gap-4 font-medium text-gray-700">
           <li>
             <Link href="/" className={isActive("/") ? activeClass : normalClass}>
               Home
@@ -79,7 +77,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/jewellery" className={normalClass}>jewellery</Link>
+            <Link href="/jewellery" className={normalClass}>Jewellery</Link>
           </li>
 
           <li>
@@ -92,7 +90,7 @@ export default function Navbar() {
         {/* MOBILE BUTTON */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-2xl"
+          className="md:hidden text-2xl focus:outline-none"
         >
           ☰
         </button>
@@ -101,7 +99,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {isOpen && (
         <div className="md:hidden bg-white border-t w-full">
-          <ul className="flex flex-col gap-2 p-4 font-medium">
+          <ul className="flex flex-col gap-1 p-4 font-medium">
 
             {/* Home */}
             <li>
@@ -109,9 +107,7 @@ export default function Navbar() {
                 href="/"
                 onClick={() => setIsOpen(false)}
                 className={`block w-full truncate px-4 py-2 rounded ${
-                  pathname === "/"
-                    ? "bg-[var(--accent)] text-white"
-                    : "hover:bg-[var(--accent)] hover:text-white"
+                  pathname === "/" ? "bg-[var(--accent)] text-white" : "hover:bg-[var(--accent)] hover:text-white"
                 }`}
               >
                 Home
@@ -124,9 +120,7 @@ export default function Navbar() {
                 href="/about"
                 onClick={() => setIsOpen(false)}
                 className={`block w-full truncate px-4 py-2 rounded ${
-                  pathname === "/about"
-                    ? "bg-[var(--accent)] text-white"
-                    : "hover:bg-[var(--accent)] hover:text-white"
+                  pathname === "/about" ? "bg-[var(--accent)] text-white" : "hover:bg-[var(--accent)] hover:text-white"
                 }`}
               >
                 About
@@ -154,9 +148,7 @@ export default function Navbar() {
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         className={`block w-full px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-white transition ${
-                          pathname === item.href
-                            ? "bg-[var(--accent)] text-white"
-                            : "text-gray-700"
+                          pathname === item.href ? "bg-[var(--accent)] text-white" : "text-gray-700"
                         }`}
                       >
                         {item.label}
@@ -167,19 +159,16 @@ export default function Navbar() {
               )}
             </li>
 
-            {/* Jewelry */}
+            {/* Jewellery */}
             <li>
               <Link
-                href="/jewelry"
+                href="/jewellery"
                 onClick={() => setIsOpen(false)}
-                className={`block w-full truncate px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-white`}
+                className="block w-full truncate px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-white"
               >
-                Jewelry
+                Jewellery
               </Link>
             </li>
-
-            {/* Printing */}
-           
 
             {/* Contact */}
             <li>
@@ -187,9 +176,7 @@ export default function Navbar() {
                 href="/contact"
                 onClick={() => setIsOpen(false)}
                 className={`block w-full truncate px-4 py-2 rounded ${
-                  pathname === "/contact"
-                    ? "bg-[var(--accent)] text-white"
-                    : "hover:bg-[var(--accent)] hover:text-white"
+                  pathname === "/contact" ? "bg-[var(--accent)] text-white" : "hover:bg-[var(--accent)] hover:text-white"
                 }`}
               >
                 Contact

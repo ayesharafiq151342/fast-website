@@ -6,14 +6,14 @@ type CounterProps = {
   end: number;
   suffix?: string;
   duration?: number;
-  startCounting: boolean; // New prop
+  startCounting: boolean;
 };
 
 const Counter = ({ end, suffix = "", duration = 2000, startCounting }: CounterProps) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!startCounting) return; // Only start when triggered
+    if (!startCounting) return;
 
     let start = 0;
     const increment = end / (duration / 20);
@@ -31,7 +31,7 @@ const Counter = ({ end, suffix = "", duration = 2000, startCounting }: CounterPr
   }, [end, duration, startCounting]);
 
   return (
-    <div className="text-3xl font-bold text-white">
+    <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
       {count.toLocaleString()}
       {suffix}
     </div>
@@ -55,10 +55,10 @@ const StatsCounter = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setStartCounting(true);
-          observer.disconnect(); // Stop observing after first trigger
+          observer.disconnect();
         }
       },
-      { threshold: 0.5 } // Trigger when 50% of section is visible
+      { threshold: 0.5 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -67,17 +67,21 @@ const StatsCounter = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-[var(--accent)] py-20 w-96 lg:w-96 xl:w-full m-auto rounded-lg">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+    <section
+      ref={ref}
+      className="bg-[var(--accent)] py-20 w-full rounded-lg"
+    >
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold text-white">
           Our Achievements
         </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-white/80">
+        <p className="mx-auto mb-12 max-w-2xl text-white/80 text-sm sm:text-base">
           We take pride in delivering quality services and building long-term
           relationships with our clients around the world.
         </p>
 
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
               <Counter
@@ -85,7 +89,9 @@ const StatsCounter = () => {
                 suffix={stat.suffix}
                 startCounting={startCounting}
               />
-              <p className="mt-2 text-lg font-medium text-white">{stat.text}</p>
+              <p className="mt-2 text-base sm:text-lg md:text-xl font-medium text-white text-center">
+                {stat.text}
+              </p>
             </div>
           ))}
         </div>

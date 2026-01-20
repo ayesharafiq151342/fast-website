@@ -53,20 +53,20 @@ export default function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="bg-white px-4 md:px-6 py-4 flex items-center">
+      <nav className="bg-white px-4 sm:px-6 md:px-8 py-3 flex items-center">
         {/* LOGO */}
         <Link href="/jewellery" className="flex-shrink-0">
           <Image
             src="/jewllery/logobg.jpeg"
             alt="HJ Jewellery"
-            width={90}
+            width={120}
             height={50}
-            className="object-contain h-[7vh]"
+            className="object-contain h-8 sm:h-10 md:h-12"
           />
         </Link>
 
-        {/* MENU (Desktop) */}
-        <ul className="hidden md:flex gap-6 uppercase text-sm mx-auto">
+        {/* MENU (Desktop & Tablet) */}
+        <ul className="hidden md:flex gap-4 lg:gap-6 uppercase text-sm mx-auto flex-wrap">
           {menuItems.map((item, i) => (
             <li key={i}>
               <Link
@@ -74,7 +74,7 @@ export default function Navbar() {
                 className={
                   pathname === item.href
                     ? "text-[var(--golden)] font-bold"
-                    : ""
+                    : "hover:text-[var(--golden)] transition"
                 }
               >
                 {item.name}
@@ -83,8 +83,8 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* DESKTOP ICONS */}
-        <div className="hidden md:flex items-center gap-5 ml-auto">
+        {/* ICONS (Desktop & Tablet) */}
+        <div className="hidden md:flex items-center gap-4 lg:gap-6 ml-auto">
           {/* Search */}
           <div className="relative">
             <Search
@@ -92,16 +92,16 @@ export default function Navbar() {
               onClick={() => setSearchOpen(!searchOpen)}
             />
             {searchOpen && (
-              <div className="absolute top-10 right-0 w-56 bg-white p-2 shadow-md">
+              <div className="absolute top-10 right-0 w-56 bg-white p-2 shadow-md rounded-md z-50">
                 <input
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="border w-full px-2 py-1 text-sm mb-2"
+                  className="border w-full px-2 py-1 text-sm mb-2 rounded-md"
                   placeholder="Search category"
                 />
                 <button
                   onClick={handleSearch}
-                  className="w-full bg-[var(--golden)] text-white py-1 text-sm"
+                  className="w-full bg-[var(--golden)] text-white py-1 text-sm rounded-md"
                 >
                   Go
                 </button>
@@ -109,12 +109,14 @@ export default function Navbar() {
             )}
           </div>
 
+          {/* User */}
           <Link href="/profile">
             <User className="w-5 h-5 cursor-pointer" />
           </Link>
 
+          {/* Cart */}
           <div
-            className="relative cursor-pointer flex items-center gap-2"
+            className="relative cursor-pointer flex items-center gap-1"
             onClick={() => setCartOpen(true)}
           >
             <ShoppingBag className="w-5 h-5" />
@@ -123,7 +125,9 @@ export default function Navbar() {
                 {totalItems}
               </span>
             )}
-            <span className="text-sm font-medium">Rs {totalPrice}</span>
+            <span className="text-sm font-medium hidden lg:inline">
+              Rs {totalPrice}
+            </span>
           </div>
         </div>
 
@@ -138,27 +142,77 @@ export default function Navbar() {
 
       {/* MOBILE SIDEBAR */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-black/40">
-          <div className="absolute right-0 top-0 h-full w-72 bg-white p-4">
+        <div className="fixed inset-0 z-50 flex">
+          <div
+            className="fixed inset-0 bg-black/40"
+            onClick={() => setMobileOpen(false)}
+          />
+          <div className="relative w-72 bg-white p-4 h-full">
             <button
-              className="mb-4"
+              className="mb-4 flex justify-end w-full"
               onClick={() => setMobileOpen(false)}
             >
-              <X />
+              <X className="w-6 h-6" />
             </button>
 
+            {/* Mobile Search */}
+            <div className="mb-4">
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="border w-full px-2 py-1 text-sm rounded-md mb-2"
+                placeholder="Search category"
+              />
+              <button
+                onClick={handleSearch}
+                className="w-full bg-[var(--golden)] text-white py-1 text-sm rounded-md"
+              >
+                Go
+              </button>
+            </div>
+
+            {/* Menu Items */}
             <ul className="space-y-4 uppercase text-sm">
               {menuItems.map((item, i) => (
                 <li key={i}>
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
+                    className={
+                      pathname === item.href
+                        ? "text-[var(--golden)] font-bold"
+                        : "hover:text-[var(--golden)] transition"
+                    }
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
+
+            {/* Mobile Cart & Profile */}
+            <div className="mt-6 flex items-center gap-4">
+              <Link href="/profile">
+                <User className="w-5 h-5 cursor-pointer" />
+              </Link>
+              <div
+                className="relative cursor-pointer flex items-center gap-1"
+                onClick={() => {
+                  setCartOpen(true);
+                  setMobileOpen(false);
+                }}
+              >
+                <ShoppingBag className="w-5 h-5" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                    {totalItems}
+                  </span>
+                )}
+                <span className="text-sm font-medium">
+                  Rs {totalPrice}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       )}

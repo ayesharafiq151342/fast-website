@@ -38,26 +38,22 @@ const reviews = [
 ];
 
 /* ================= Stars Component ================= */
-const Stars = ({ rating }: { rating: number }) => {
-  return (
-    <div className="flex gap-1 mb-3">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <svg
-          key={star}
-          className={`w-4 h-4 ${
-            star <= rating
-              ? "text-[var(--accent)]"
-              : "text-gray-300"
-          }`}
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.975a1 1 0 00.95.69h4.184c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.286 3.975c.3.921-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.197-1.539-1.118l1.286-3.975a1 1 0 00-.364-1.118L2.043 9.402c-.783-.57-.38-1.81.588-1.81h4.184a1 1 0 00.95-.69l1.286-3.975z" />
-        </svg>
-      ))}
-    </div>
-  );
-};
+const Stars = ({ rating }: { rating: number }) => (
+  <div className="flex gap-1 mb-3">
+    {[1, 2, 3, 4, 5].map((star) => (
+      <svg
+        key={star}
+        className={`w-4 h-4 ${
+          star <= rating ? "text-[var(--accent)]" : "text-gray-300"
+        }`}
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.975a1 1 0 00.95.69h4.184c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.286 3.975c.3.921-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.197-1.539-1.118l1.286-3.975a1 1 0 00-.364-1.118L2.043 9.402c-.783-.57-.38-1.81.588-1.81h4.184a1 1 0 00.95-.69l1.286-3.975z" />
+      </svg>
+    ))}
+  </div>
+);
 
 /* ================= Reviews Component ================= */
 export default function Reviews() {
@@ -89,20 +85,19 @@ export default function Reviews() {
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
-        <h2 className="text-3xl font-bold text-center text-[var(--text-color)] mb-12">
-        Success Stories Fuel  
-<span className="text-[var(--accent)]"> Our Innovation.</span>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-[var(--text-color)] mb-12">
+          Success Stories Fuel <span className="text-[var(--accent)]">Our Innovation.</span>
         </h2>
 
         {/* Scroll Container */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-hidden reviews-scroll"
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth touch-pan-x -mx-4 px-4"
         >
           {[...reviews, ...reviews].map((item, index) => (
             <div
               key={index}
-              className="min-w-[320px] bg-[var(--card-bg)] border border-[var(--border)] rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300"
+              className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px] bg-[var(--card-bg)] border border-[var(--border)] rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 snap-start"
             >
               {/* User Info */}
               <div className="flex items-center gap-4 mb-3">
@@ -123,7 +118,7 @@ export default function Reviews() {
               <Stars rating={item.rating} />
 
               {/* Review */}
-              <p className="text-[var(--text-color)] leading-relaxed">
+              <p className="text-[var(--text-color)] leading-relaxed text-sm sm:text-base">
                 “{item.review}”
               </p>
             </div>

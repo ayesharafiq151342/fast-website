@@ -1,14 +1,31 @@
 "use client";
 
-import { useState } from "react";
-import ProductGrid from "@/app/jewellery/component/ProductGrid";
-import Sidebar from "../../jewellery/component/sidebar";
-import { products } from "@/app/data/products";
+import { useState, useMemo } from "react";
 import Navbar from "../../jewellery/component/navbar";
+import Sidebar from "../../jewellery/component/sidebar";
+import ProductGrid from "@/app/jewellery/component/ProductGrid";
+import PriceFilter from "@/app/jewellery/component/PriceFilter";
+import SearchSection from "@/app/jewellery/component/serach";
+import { products } from "@/app/data/products";
 
-export default function MalaPage() {
+export default function AccessoriesPage() {
+  // CATEGORY & SEARCH
   const [category, setCategory] = useState<string | null>("ACCESSORIES");
+  const [search, setSearch] = useState("");
+
+  // PRICE FILTER
+  const [price, setPrice] = useState(6500);
+  const [appliedPrice, setAppliedPrice] = useState(6500);
+
+  // unique categories
   const categories = Array.from(new Set(products.map((p) => p.category)));
+
+  // SEARCH > CATEGORY (same logic as bangles)
+  const activeCategory = useMemo(() => {
+    return search.trim()
+      ? search.toUpperCase()
+      : category;
+  }, [search, category]);
 
   return (
     <>
@@ -16,51 +33,81 @@ export default function MalaPage() {
 
       <section className="bg-[#fbf6ea] min-h-screen py-12">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-10">
+
+          {/* SIDEBAR */}
           <aside className="space-y-10">
+
+            {/* SEARCH (component) */}
             <div className="bg-white p-5 rounded-md shadow">
-              <div className="flex border rounded-md overflow-hidden">
-                <input
-                  type="text"
-                  placeholder="Search products..."
-                  className="flex-1 px-3 py-2 text-sm outline-none"
-                />
-                <button className="bg-[#c9a14a] px-4 text-white font-bold">›</button>
-              </div>
+              <SearchSection
+                value={search}
+                onChange={(val) => {
+                  setSearch(val);
+                  if (!val) setCategory("ACCESSORIES");
+                }}
+              />
             </div>
 
+            {/* PRICE FILTER */}
+            <PriceFilter
+              min={599}
+              max={6500}
+              value={price}
+              onChange={setPrice}
+              onApply={() => setAppliedPrice(price)}
+            />
+
+            {/* CATEGORY FILTER */}
             <div className="bg-white p-5 rounded-md shadow">
-             
+              <h3 className="text-sm font-semibold mb-4 uppercase">
+                Filter by Categories
+              </h3>
 
               <Sidebar
                 categories={categories}
                 selectedCategory={category}
-                onCategorySelect={setCategory}
+                onCategorySelect={(cat) => {
+                  setCategory(cat);
+                  setSearch("");
+                }}
               />
             </div>
           </aside>
 
+          {/* CONTENT */}
           <div className="lg:col-span-3 space-y-8 bg-white">
-            <div className="flex flex-col gap-2 m-6 ">
+
+            {/* HEADING */}
+            <div className="flex flex-col gap-2 m-6">
               <p className="text-xs text-gray-400">
-                Home / <span className="text-gray-600 font-medium">{category || "ACCESSORIES"}</span>
+                Home /{" "}
+                <span className="text-gray-600 font-medium">
+                  {activeCategory || "ACCESSORIES"}
+                </span>
               </p>
 
-              <h1 className="text-2xl md:text-8xl p-10 font-montserrat text-[var(--text_skin)]">
-                {category || "ACCESSORIES"}
-              </h1>
-            </div>
-<p  className="xl:ml-17">Elegant and stylish accessories crafted with premium materials.</p>
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl p-4 sm:p-6 md:p-8 font-montserrat text-[var(--text_skin)]">
+  {activeCategory || "ACCESSORIES"}
+</h1>
 
-            <div className="pl-10 pr-10">
-              <ProductGrid
-                limit={12}
-                columns={3}
-                imgHeight="h-[260px]"
-                imgWidth="w-full"
-                category={category || undefined}
-              />
+<p className="mt-4 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[38px]text-gray-700 max-w-3xl">
+  Elegant and stylish accessories crafted with premium materials.
+</p>
             </div>
+            {/* PRODUCTS */}
+            <div className="px-5">
+  <ProductGrid
+    limit={12}
+    columns={3}
+    imgHeight="h-[260px]"
+    imgWidth="w-full md:w-auto" // <-- full width on mobile, auto width on medium screens and above
+    category={activeCategory || undefined}
+    maxPrice={appliedPrice}
+  />
+</div>
+
           </div>
+
         </div>
       </section>
     </>
