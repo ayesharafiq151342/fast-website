@@ -21,9 +21,9 @@ export default function Navbar() {
   const serviceLinks = [
     { href: "/services/business", label: "IT Solutions" },
     { href: "/services/marketing", label: "Digital Marketing" },
-    { href: "/services/education", label: "Education" },
-    { href: "/services/hospitality", label: "Hospitality" },
-    { href: "/services/travel", label: "Travel & Ticketing" },
+    { href: "/services/Education", label: "Education" },
+    { href: "/services/Hospitilaty", label: "Hospitality" },
+    { href: "/services/Travel", label: "Travel & Ticketing" },
     { href: "/services/consultancy", label: "Consultancy" },
     { href: "/services/online-store", label: "Online Store" },
     { href: "/services/real-estate", label: "Real Estate" },

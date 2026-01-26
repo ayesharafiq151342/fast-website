@@ -13,6 +13,9 @@
 --skin:#faf5e5;
 --text_skin:#DCA54A;
 }
+body{
+  border: 2px solid var(--border);
+}
 @font-face {
   font-family: 'Atkinson Hyperlegible Mono';
   src: url('/fonts/AtkinsonHyperlegible-Mono.woff2') format('woff2'),

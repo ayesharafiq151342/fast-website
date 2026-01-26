@@ -65,15 +65,14 @@ export default function Reviews() {
 
     let animationId: number;
 
-    const autoScroll = () => {
-      container.scrollLeft += 0.5;
+   const autoScroll = () => {
+  container.scrollLeft += 0.2; // <-- slower speed
+  if (container.scrollLeft >= container.scrollWidth / 2) {
+    container.scrollLeft = 0;
+  }
+  animationId = requestAnimationFrame(autoScroll);
+};
 
-      if (container.scrollLeft >= container.scrollWidth / 2) {
-        container.scrollLeft = 0;
-      }
-
-      animationId = requestAnimationFrame(autoScroll);
-    };
 
     animationId = requestAnimationFrame(autoScroll);
 
@@ -83,16 +82,16 @@ export default function Reviews() {
   return (
     <section className="py-20 bg-[var(--bg-color)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-[var(--text-color)] mb-12">
-          Success Stories Fuel <span className="text-[var(--accent)]">Our Innovation.</span>
+          Success Stories Fuel{" "}
+          <span className="text-[var(--accent)]">Our Innovation.</span>
         </h2>
 
         {/* Scroll Container */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth touch-pan-x -mx-4 px-4"
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth touch-pan-x -mx-4 px-4 hide-scrollbar"
         >
           {[...reviews, ...reviews].map((item, index) => (
             <div
@@ -125,6 +124,17 @@ export default function Reviews() {
           ))}
         </div>
       </div>
+
+      {/* Scrollbar Hide CSS */}
+      <style jsx>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 }
